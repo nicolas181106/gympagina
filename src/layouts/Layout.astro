@@ -1,12 +1,15 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = "La guía definitiva para maximizar tu rendimiento y salud con el mínimo espacio. Equipamiento, rutinas y suplementación inteligente." } = Astro.props;
+const {
+	title,
+	description = "La guía definitiva para maximizar tu rendimiento y salud con el mínimo espacio. Equipamiento, rutinas y suplementación inteligente.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -18,7 +21,7 @@ const { title, description = "La guía definitiva para maximizar tu rendimiento 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | MicroGym Elite</title>
-		
+
 		<!-- SEO Meta Tags -->
 		<meta name="robots" content="index, follow" />
 		<meta property="og:type" content="website" />
@@ -26,13 +29,17 @@ const { title, description = "La guía definitiva para maximizar tu rendimiento 
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content="/og-image.jpg" />
 		<meta name="twitter:card" content="summary_large_image" />
-		
+		<meta
+			name="google-site-verification"
+			content="s0VQNm2tjEeD8Go7xJi3d3VYa0AAYv1QnVlOMysa2iY"
+		/>
+
 		<!-- AdSense simulated script -->
 		<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 	</head>
 	<body>
 		<slot />
-		
+
 		<style is:global>
 			/* Custom scrollbar for premium feel */
 			::-webkit-scrollbar {

@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://microgymelite.com', // Cambia esto por tu dominio real cuando lo tengas
+  site: 'https://microgymelite.netlify.app', // URL temporal de Netlify
   vite: {
     plugins: [tailwindcss()],
   },
