@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AdSense from '../../components/AdSense.astro';
+import { Target, Zap, Info, ArrowRight } from 'lucide-astro';
+---
+
+<Layout title="Cómo hacer Dominadas sin Barra | MicroGym Elite" description="¿No puedes instalar una barra de dominadas? Te enseñamos 3 alternativas efectivas para entrenar tu espalda en casa con equipo mínimo.">
+  <Navbar />
+  
+  <article class="pt-32 pb-24">
+    <div class="container max-w-4xl">
+      <header class="mb-12">
+        <span class="text-primary font-black tracking-widest text-[10px] uppercase">GUÍA DE ENTRENAMIENTO</span>
+        <h1 class="text-5xl md:text-7xl mt-6 mb-8 leading-tight">Espalda en Casa: <span class="text-gradient">Sin Barra</span> de Dominadas</h1>
+        <div class="flex items-center gap-6 text-text-dim text-sm uppercase tracking-widest font-bold">
+          <span>Dificultad: Media</span>
+          <span>•</span>
+          <span>Equipamiento: Toalla / Mesa / Bandas</span>
+        </div>
+      </header>
+
+      <AdSense type="banner" />
+
+      <div class="prose prose-invert max-w-none space-y-12 text-text-muted">
+        <p class="text-lg leading-relaxed">
+          Las dominadas son el rey de los ejercicios de tirón, pero no todo el mundo puede (o quiere) agujerear la pared o el marco de la puerta para instalar una barra. Si este es tu caso, no te preocupes: tu espalda puede seguir creciendo.
+        </p>
+
+        <section>
+          <h2 class="text-3xl text-text font-bold mb-6">1. El Remo en Mesa (Australian Pull-ups)</h2>
+          <p>
+            Busca una mesa resistente (muy importante). Tumbado debajo, agárrate al borde y tira de tu pecho hacia la mesa. Es el equivalente horizontal a la dominada y trabaja los mismos grupos musculares.
+          </p>
+          <div class="bg-surface p-6 rounded-xl border border-white/5 italic text-sm">
+            <strong>Tip Elite:</strong> Cuanto más estiradas estén tus piernas, más difícil será el ejercicio.
+          </div>
+        </section>
+
+        <AdSense type="in-feed" />
+
+        <section>
+          <h2 class="text-3xl text-text font-bold mb-6">2. Dominadas con Toalla en la Puerta</h2>
+          <p>
+            Haz dos nudos fuertes en una toalla larga, pásala por encima de la puerta y ciérrala. Ahora tienes dos agarres seguros para hacer remos o incluso dominadas asistidas si la puerta es lo suficientemente fuerte.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-3xl text-text font-bold mb-6">3. El Uso de Bandas de Resistencia</h2>
+          <p>
+            Las bandas elásticas te permiten simular el movimiento de jalón al pecho. Ancla la banda en lo alto de un armario o puerta y tira hacia abajo con los codos pegados al cuerpo.
+          </p>
+        </div>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12">
+          <h3 class="text-primary font-bold mb-4">¿Prefieres la solución definitiva?</h3>
+          <p class="text-sm mb-6">Si finalmente decides que quieres una barra pero no quieres hacer agujeros, existen opciones extensibles muy seguras.</p>
+          <a href="/analisis" class="text-xs font-black tracking-widest uppercase flex items-center gap-2 text-text hover:text-primary transition-colors">
+            Ver análisis de barras sin tornillos <ArrowRight size={16} />
+          </a>
+        </div>
+      </div>
+
+      <AdSense type="square" />
+    </div>
+  </article>
+</Layout>

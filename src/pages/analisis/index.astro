@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AmazonProduct from '../../components/AmazonProduct.astro';
+import AdSense from '../../components/AdSense.astro';
+
+const analyses = [
+  {
+    title: "Mancuernas Ajustables Bowflex SelectTech 552",
+    price: "429€",
+    rating: "5",
+    image: "/images/dumbbells.png",
+    link: "https://amzn.to/3example",
+    tag: "EL GANADOR",
+    slug: "bowflex-552"
+  },
+  {
+    title: "Mancuernas Ativafit 25kg (Pareja)",
+    price: "299€",
+    rating: "4",
+    image: "/images/dumbbells.png",
+    link: "https://amzn.to/3example",
+    tag: "CALIDAD/PRECIO",
+    slug: "#"
+  },
+  {
+    title: "Banco de Musculación Plegable Flybird",
+    price: "159€",
+    rating: "5",
+    image: "/images/hero.png",
+    link: "https://amzn.to/3example",
+    tag: "INDISPENSABLE",
+    slug: "banco-flybird"
+  },
+  {
+    title: "Barra de Dominadas Extensible Premium",
+    price: "45€",
+    rating: "4",
+    image: "/images/dumbbells.png",
+    link: "https://amzn.to/3example",
+    tag: "ECONÓMICO",
+    slug: "#"
+  },
+  {
+    title: "Bandas de Resistencia Set Completo",
+    price: "35€",
+    rating: "5",
+    image: "/images/hero.png",
+    link: "https://amzn.to/3example",
+    tag: "MÁXIMO ESPACIO",
+    slug: "#"
+  }
+];
+---
+
+<Layout title="Análisis de Equipamiento | MicroGym Elite" description="Reviews honestas del mejor equipamiento para gimnasios en casa pequeños. Mancuernas, bancos y racks analizados por expertos.">
+  <Navbar />
+  
+  <main class="pt-32">
+    <section class="section-padding">
+      <div class="container">
+        <div class="max-w-3xl mb-16">
+          <span class="text-primary font-black tracking-widest text-[10px] uppercase">EQUIPAMIENTO PROBADO</span>
+          <h1 class="text-5xl md:text-6xl mt-4 mb-6">Análisis de <span class="text-gradient">Gear</span></h1>
+          <p class="text-text-muted text-xl leading-relaxed">
+            No malgastes tu dinero en equipo que estorba. Hemos probado y seleccionado las herramientas más eficientes para transformar cualquier habitación en un gimnasio de alto rendimiento.
+          </p>
+        </div>
+
+        <div class="container mb-12">
+          <AdSense type="banner" />
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {analyses.map(product => (
+            <div class="flex flex-col gap-4">
+              <AmazonProduct {...product} />
+              {product.slug !== "#" && (
+                <a href={`/analisis/${product.slug}`} class="text-xs font-black tracking-widest uppercase flex items-center gap-2 text-text hover:text-primary transition-colors ml-2">
+                  Leer Análisis Detallado →
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <div class="container pb-24">
+      <AdSense type="in-feed" />
+    </div>
+  </main>
+
+  <footer class="py-12 bg-surface/30 border-t border-white/5 text-center">
+    <div class="container text-text-dim text-[10px] tracking-widest uppercase">
+      <p>&copy; 2024 MicroGym Elite. Participamos en el Programa de Afiliados de Amazon.</p>
+    </div>
+  </footer>
+</Layout>

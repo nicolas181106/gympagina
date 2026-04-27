@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AdSense from '../../components/AdSense.astro';
+import { Timer, Flame, Zap, Play } from 'lucide-astro';
+
+const workout = [
+  { name: "Jumping Jacks", duration: "40 seg", rest: "20 seg" },
+  { name: "Flexiones (Push-ups)", duration: "40 seg", rest: "20 seg" },
+  { name: "Escaladores (Mountain Climbers)", duration: "40 seg", rest: "20 seg" },
+  { name: "Sentadillas con salto", duration: "40 seg", rest: "20 seg" },
+  { name: "Plancha Abdominal", duration: "40 seg", rest: "20 seg" },
+  { name: "Burpees", duration: "40 seg", rest: "20 seg" }
+];
+---
+
+<Layout title="Rutina HIIT Quema-Grasa en Casa | MicroGym Elite" description="Entrenamiento de alta intensidad para quemar grasa en solo 20 minutos. Sin equipo, perfecto para espacios pequeños.">
+  <Navbar />
+  
+  <article class="pt-32 pb-24">
+    <div class="container max-w-4xl">
+      <header class="mb-12">
+        <span class="text-primary font-black tracking-widest text-[10px] uppercase">ENTRENAMIENTO EXPRES</span>
+        <h1 class="text-4xl md:text-6xl mt-4 mb-8 leading-tight">HIIT: <span class="text-gradient">Máxima Quema</span> en 20 Minutos</h1>
+        
+        <div class="flex flex-wrap gap-4">
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Timer class="text-primary" size={20} />
+            <span class="text-sm font-bold uppercase tracking-widest">Total: 20 min</span>
+          </div>
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Flame class="text-primary" size={20} />
+            <span class="text-sm font-bold uppercase tracking-widest">Intensidad: Alta</span>
+          </div>
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Zap class="text-primary" size={20} />
+            <span class="text-sm font-bold uppercase tracking-widest">Equipo: Ninguno</span>
+          </div>
+        </div>
+      </header>
+
+      <AdSense type="banner" />
+
+      <div class="prose prose-invert max-w-none space-y-12 text-text-muted">
+        <p class="text-lg">
+          El HIIT (High Intensity Interval Training) es la forma más eficiente de mejorar tu capacidad cardiovascular y quemar calorías en un tiempo récord. Esta rutina está diseñada para que puedas hacerla en el salón de tu casa, ocupando solo lo que mide una esterilla.
+        </p>
+
+        <div class="bg-surface p-8 rounded-3xl border border-white/5">
+          <h2 class="text-2xl text-text font-bold mb-8 flex items-center gap-3">
+            <Play class="text-primary" fill="currentColor" /> Estructura del Circuito
+          </h2>
+          <div class="space-y-6">
+            {workout.map((exercise, index) => (
+              <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                <div class="flex items-center gap-4">
+                  <span class="text-primary font-black text-2xl">0{index + 1}</span>
+                  <span class="text-text font-bold text-lg">{exercise.name}</span>
+                </div>
+                <div class="flex items-center gap-6 text-sm">
+                  <span class="text-text font-bold">{exercise.duration}</span>
+                  <span class="text-text-dim">descanso {exercise.rest}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p class="mt-8 text-sm italic text-center text-text-dim">
+            Realiza 3 vueltas completas al circuito. Descansa 2 minutos entre vueltas.
+          </p>
+        </div>
+
+        <AdSense type="in-feed" />
+
+        <h2 class="text-3xl text-text font-bold mt-12">Claves para no morir en el intento</h2>
+        <p>
+          1. <strong>Calentamiento:</strong> Haz 5 minutos de movilidad articular antes de empezar. <br />
+          2. <strong>Intensidad:</strong> Los 40 segundos de trabajo deben ser a máxima velocidad mantenible. <br />
+          3. <strong>Progresión:</strong> Si eres principiante, reduce el trabajo a 30 seg y sube el descanso a 30 seg.
+        </p>
+      </div>
+
+      <AdSense type="square" />
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AdSense from '../../components/AdSense.astro';
+import { Clock, Zap, Dumbbell, Flame } from 'lucide-astro';
+
+const routine = [
+  { exercise: "Sentadilla con Mancuernas", sets: "3", reps: "10-12", tip: "Mantén la espalda recta." },
+  { exercise: "Press de Banca en Suelo/Banco", sets: "3", reps: "8-10", tip: "Controla la bajada." },
+  { exercise: "Remo a una mano", sets: "3", reps: "10-12", tip: "Apóyate en una silla si no tienes banco." },
+  { exercise: "Press Militar de Pie", sets: "2", reps: "12-15", tip: "Aprieta el core." },
+  { exercise: "Zancadas", sets: "2", reps: "10 por pierna", tip: "Paso largo." }
+];
+---
+
+<Layout title="Rutina FullBody Minimalista | MicroGym Elite" description="La rutina perfecta para ganar fuerza y músculo en casa con solo un par de mancuernas. Ideal para principiantes y espacios reducidos.">
+  <Navbar />
+  
+  <article class="pt-32 pb-24">
+    <div class="container max-w-4xl">
+      <header class="mb-12">
+        <span class="text-primary font-black tracking-widest text-[10px] uppercase">RUTINA DE ENTRENAMIENTO</span>
+        <h1 class="text-4xl md:text-6xl mt-4 mb-8 leading-tight">FullBody Minimalista: <span class="text-gradient">Fuerza Total</span> en 45 Minutos</h1>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Clock class="text-primary" size={20} />
+            <div>
+              <span class="text-[10px] text-text-dim block uppercase font-bold">Tiempo</span>
+              <span class="text-sm font-bold">45 min</span>
+            </div>
+          </div>
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Zap class="text-primary" size={20} />
+            <div>
+              <span class="text-[10px] text-text-dim block uppercase font-bold">Nivel</span>
+              <span class="text-sm font-bold">Iniciación</span>
+            </div>
+          </div>
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Dumbbell class="text-primary" size={20} />
+            <div>
+              <span class="text-[10px] text-text-dim block uppercase font-bold">Equipo</span>
+              <span class="text-sm font-bold">Mancuernas</span>
+            </div>
+          </div>
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Flame class="text-primary" size={20} />
+            <div>
+              <span class="text-[10px] text-text-dim block uppercase font-bold">Frecuencia</span>
+              <span class="text-sm font-bold">3 días/sem</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <AdSense type="banner" />
+
+      <div class="prose prose-invert max-w-none space-y-8 text-text-muted">
+        <p class="text-lg leading-relaxed">
+          Esta rutina está diseñada para aquellos que quieren resultados reales pero no tienen acceso a un gimnasio comercial. Nos enfocaremos en los movimientos básicos que involucran grandes grupos musculares para maximizar la quema de calorías y la ganancia de fuerza.
+        </p>
+
+        <h2 class="text-3xl text-text font-bold mt-12">La Tabla de Entrenamiento</h2>
+        <div class="overflow-x-auto my-8">
+          <table class="w-full text-left border-collapse bg-surface rounded-2xl overflow-hidden border border-white/5">
+            <thead class="bg-white/5 text-text uppercase text-[10px] font-black tracking-widest">
+              <tr>
+                <th class="p-6">Ejercicio</th>
+                <th class="p-6">Series</th>
+                <th class="p-6">Reps</th>
+                <th class="p-6">Consejo Elite</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              {routine.map(ex => (
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-6 text-text font-bold">{ex.exercise}</td>
+                  <td class="p-6">{ex.sets}</td>
+                  <td class="p-6">{ex.reps}</td>
+                  <td class="p-6 text-xs italic">{ex.tip}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <AdSense type="in-feed" />
+
+        <h2 class="text-3xl text-text font-bold mt-12">Consejos para el Éxito</h2>
+        <p>
+          1. <strong>Sobrecarga Progresiva:</strong> Intenta subir el peso o hacer una repetición más cada semana. <br />
+          2. <strong>Descanso:</strong> Descansa 60-90 segundos entre series. <br />
+          3. <strong>Forma:</strong> No sacrifiques la técnica por el peso. En casa, la seguridad es lo primero.
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12">
+          <h3 class="text-primary font-bold mb-4">¿Necesitas el equipo adecuado?</h3>
+          <p class="text-sm mb-6">Para esta rutina recomendamos encarecidamente unas mancuernas ajustables de calidad.</p>
+          <a href="/analisis/bowflex-552" class="text-xs font-black tracking-widest uppercase flex items-center gap-2 text-text hover:text-primary transition-colors">
+            Ver nuestra recomendación de mancuernas →
+          </a>
+        </div>
+      </div>
+
+      <AdSense type="square" />
+    </div>
+  </article>
+</Layout>

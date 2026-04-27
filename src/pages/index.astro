@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import AmazonProduct from '../components/AmazonProduct.astro';
+import AdSense from '../components/AdSense.astro';
+import { ArrowRight, Zap, Target, ShieldCheck } from 'lucide-astro';
+
+const featuredProducts = [
+  {
+    title: "Mancuernas Ajustables Bowflex SelectTech 552",
+    price: "429€",
+    rating: "5",
+    image: "/images/dumbbells.png",
+    link: "https://amzn.to/3example",
+    tag: "TOP VENTAS"
+  },
+  {
+    title: "Banco de Musculación Plegable Flybird",
+    price: "159€",
+    rating: "4",
+    image: "/images/hero.png",
+    link: "https://amzn.to/3example",
+    tag: "CALIDAD/PRECIO"
+  },
+  {
+    title: "Barra de Dominadas Extensible Premium",
+    price: "45€",
+    rating: "5",
+    image: "/images/dumbbells.png",
+    link: "https://amzn.to/3example",
+    tag: "INDISPENSABLE"
+  }
+];
+---
+
+<Layout title="Home Gym para Espacios Reducidos | MicroGym Elite">
+	<Navbar />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="relative h-[90vh] flex items-center bg-[url('/images/hero.png')] bg-cover bg-center">
+			<div class="absolute inset-0 bg-gradient-to-r from-bg via-bg/90 to-transparent"></div>
+			<div class="container relative z-10 max-w-3xl">
+				<span class="inline-block px-4 py-1.5 mb-8 text-[10px] font-black tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full animate-fade-in">
+					EL FUTURO DEL FITNESS EN CASA
+				</span>
+				<h1 class="text-5xl md:text-7xl mb-6 leading-[1.1] animate-fade-in">
+					Entrena <span class="text-gradient">Sin Límites</span> <br /> En Cualquier Espacio
+				</h1>
+				<p class="text-lg md:text-xl text-text-muted mb-10 max-w-xl animate-fade-in">
+					Guías expertas, análisis de equipamiento ultra-compacto y rutinas de alto rendimiento diseñadas para el estilo de vida urbano.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 animate-fade-in">
+					<a href="/analisis" class="btn btn-primary text-black">Ver Mejor Equipamiento</a>
+					<a href="/guias" class="btn btn-secondary">Guías Gratuitas</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Trust Features -->
+		<section class="relative z-20 -mt-20">
+			<div class="container grid md:grid-cols-3 gap-6">
+				<div class="glass p-10 text-center flex flex-col items-center gap-4">
+					<Zap class="text-primary w-10 h-10" />
+					<h3 class="text-xl">Máxima Eficiencia</h3>
+					<p class="text-text-muted text-sm leading-relaxed">Rutinas de 30-45 min optimizadas para ganar fuerza y músculo sin perder el tiempo.</p>
+				</div>
+				<div class="glass p-10 text-center flex flex-col items-center gap-4">
+					<Target class="text-primary w-10 h-10" />
+					<h3 class="text-xl">Espacio Inteligente</h3>
+					<p class="text-text-muted text-sm leading-relaxed">Analizamos solo equipo que se pliega, se guarda o desaparece cuando no lo usas.</p>
+				</div>
+				<div class="glass p-10 text-center flex flex-col items-center gap-4">
+					<ShieldCheck class="text-primary w-10 h-10" />
+					<h3 class="text-xl">Basado en Ciencia</h3>
+					<p class="text-text-muted text-sm leading-relaxed">Nada de broscience. Solo métodos probados para transformar tu físico en casa.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- AdSense Banner -->
+		<div class="container">
+			<AdSense type="banner" />
+		</div>
+
+		<!-- Featured Products -->
+		<section class="section-padding">
+			<div class="container">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl md:text-5xl mb-4">Equipamiento <span class="text-gradient">Elite</span></h2>
+					<p class="text-text-muted max-w-2xl mx-auto">Los imprescindibles para tu micro-gym seleccionados por nuestros expertos.</p>
+				</div>
+				<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+					{featuredProducts.map(product => (
+						<AmazonProduct {...product} />
+					))}
+				</div>
+				<div class="text-center mt-16">
+					<a href="/analisis" class="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm hover:translate-x-2 transition-transform">
+						Ver todos los análisis <ArrowRight size={18} />
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content Preview -->
+		<section class="section-padding bg-surface/50">
+			<div class="container grid lg:grid-cols-2 gap-16 items-center">
+				<div class="order-2 lg:order-1">
+					<h2 class="text-4xl mb-6">¿Por qué elegir un <br /><span class="text-gradient">MicroGym</span>?</h2>
+					<p class="text-text-muted text-lg mb-8">No necesitas 100m² para ponerte en forma. La clave está en la selección inteligente de herramientas multifuncionales.</p>
+					<ul class="space-y-4 mb-10">
+						<li class="flex items-center gap-4 text-text-muted">
+							<span class="text-primary font-black">✓</span> Ahorra tiempo de desplazamiento al gimnasio.
+						</li>
+						<li class="flex items-center gap-4 text-text-muted">
+							<span class="text-primary font-black">✓</span> Inversión amortizada en menos de 1 año.
+						</li>
+						<li class="flex items-center gap-4 text-text-muted">
+							<span class="text-primary font-black">✓</span> Privacidad total y disponibilidad 24/7.
+						</li>
+						<li class="flex items-center gap-4 text-text-muted">
+							<span class="text-primary font-black">✓</span> Personaliza tu entorno de entrenamiento.
+						</li>
+					</ul>
+					<a href="/guias/inicio-microgym" class="btn btn-primary text-black mt-2">Aprender Más</a>
+				</div>
+				<div class="order-1 lg:order-2">
+					<div class="glass p-2 rounded-3xl overflow-hidden shadow-2xl shadow-primary/5">
+						<img src="/images/hero.png" alt="MicroGym" class="rounded-2xl w-full" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="container">
+			<AdSense type="in-feed" />
+		</div>
+	</main>
+
+	<footer class="pt-24 pb-12 bg-bg border-t border-white/5">
+		<div class="container">
+			<div class="grid md:grid-cols-4 gap-12 mb-16">
+				<div class="md:col-span-2">
+					<span class="text-2xl font-extrabold tracking-tighter mb-6 block">MicroGym<span class="text-gradient">Elite</span></span>
+					<p class="text-text-muted max-w-sm leading-relaxed">Expertos en fitness para espacios reducidos. Ganamos músculo, no ocupamos espacio. Únete a la comunidad de alto rendimiento.</p>
+				</div>
+				<div>
+					<h4 class="text-xs font-black tracking-widest mb-6">NAVEGACIÓN</h4>
+					<ul class="space-y-3">
+						<li><a href="/guias" class="text-sm text-text-muted hover:text-primary transition-colors">Guías de Entrenamiento</a></li>
+						<li><a href="/analisis" class="text-sm text-text-muted hover:text-primary transition-colors">Análisis de Gear</a></li>
+						<li><a href="/blog" class="text-sm text-text-muted hover:text-primary transition-colors">Blog & Noticias</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="text-xs font-black tracking-widest mb-6">LEGAL</h4>
+					<ul class="space-y-3">
+						<li><a href="/privacidad" class="text-sm text-text-muted hover:text-primary transition-colors">Política de Privacidad</a></li>
+						<li><a href="/afiliados" class="text-sm text-text-muted hover:text-primary transition-colors">Aviso de Afiliados</a></li>
+						<li><a href="/cookies" class="text-sm text-text-muted hover:text-primary transition-colors">Política de Cookies</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="pt-8 border-t border-white/5 text-center text-[10px] text-text-dim uppercase tracking-widest">
+				<p>&copy; 2024 MicroGym Elite. Todos los derechos reservados. Participamos en el Programa de Afiliados de Amazon.</p>
+			</div>
+		</div>
+	</footer>
+</Layout>

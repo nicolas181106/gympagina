@@ -1,0 +1,20 @@
+---
+import { Dumbbell } from 'lucide-astro';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 py-6 bg-bg/80 backdrop-blur-xl border-bottom border-white/10">
+  <div class="container flex justify-between items-center">
+    <a href="/" class="flex items-center gap-3 text-2xl font-extrabold tracking-tighter">
+      <Dumbbell class="text-primary w-8 h-8" />
+      <span>MicroGym<span class="text-gradient">Elite</span></span>
+    </a>
+    
+    <ul class="hidden md:flex gap-10">
+      <li><a href="/guias" class="font-semibold text-sm uppercase text-text-muted hover:text-primary transition-colors">Guías</a></li>
+      <li><a href="/analisis" class="font-semibold text-sm uppercase text-text-muted hover:text-primary transition-colors">Análisis Gear</a></li>
+      <li><a href="/rutinas" class="font-semibold text-sm uppercase text-text-muted hover:text-primary transition-colors">Rutinas</a></li>
+      <li><a href="/suplementos" class="font-semibold text-sm uppercase text-text-muted hover:text-primary transition-colors">Suplementos</a></li>
+    </ul>
+
+  </div>
+</nav>

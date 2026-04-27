@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AmazonProduct from '../../components/AmazonProduct.astro';
+import AdSense from '../../components/AdSense.astro';
+import { Target, ShieldCheck, Zap, Info } from 'lucide-astro';
+
+const product = {
+  title: "Proteína Whey Isolada de Alta Calidad (2kg)",
+  price: "59€",
+  rating: "5",
+  image: "/images/hero.png",
+  link: "https://amzn.to/3example",
+  tag: "RECOMENDACIÓN ELITE"
+};
+---
+
+<Layout title="Guía: Proteína de Suero (Whey Protein) | MicroGym Elite" description="¿Es necesaria la proteína en polvo? Te enseñamos a elegir la mejor opción según tus objetivos y presupuesto.">
+  <Navbar />
+  
+  <article class="pt-32 pb-24">
+    <div class="container max-w-4xl">
+      <header class="mb-12">
+        <span class="text-primary font-black tracking-widest text-[10px] uppercase">GUÍA DE NUTRICIÓN</span>
+        <h1 class="text-5xl md:text-7xl mt-6 mb-8 leading-tight">Proteína de Suero: <span class="text-gradient">¿Cuál comprar?</span></h1>
+        <div class="flex items-center gap-6 text-text-dim text-sm uppercase tracking-widest font-bold">
+          <span>Categoría: Suplementos Básicos</span>
+          <span>•</span>
+          <span>Actualizado 2024</span>
+        </div>
+      </header>
+
+      <AdSense type="banner" />
+
+      <div class="prose prose-invert max-w-none space-y-8 text-text-muted">
+        <p class="text-lg leading-relaxed">
+          La proteína de suero o <strong>Whey Protein</strong> es el suplemento más vendido del mundo. Sin embargo, hay mucha confusión sobre los diferentes tipos (Concentrada, Isolatada, Hidrolizada) y si realmente son necesarias para ganar músculo.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 my-12">
+          <div class="glass p-8">
+            <h3 class="text-text font-bold mb-4 text-xl">¿Para qué sirve?</h3>
+            <ul class="space-y-4 text-sm">
+              <li class="flex items-start gap-3"><Zap class="text-primary shrink-0" size={18} /><span>Acelera la recuperación tras el entrenamiento.</span></li>
+              <li class="flex items-start gap-3"><Zap class="text-primary shrink-0" size={18} /><span>Ayuda a alcanzar el mínimo de proteína diario cómodamente.</span></li>
+              <li class="flex items-start gap-3"><Zap class="text-primary shrink-0" size={18} /><span>Es una fuente de proteína completa y de rápida absorción.</span></li>
+            </ul>
+          </div>
+          <div class="glass p-8">
+            <h3 class="text-text font-bold mb-4 text-xl">¿Cuándo tomarla?</h3>
+            <p class="text-sm italic">"Lo más importante es el total diario, pero un batido después de entrenar es una forma cómoda de empezar la recuperación."</p>
+          </div>
+        </div>
+
+        <h2>Tipos de Proteína: Guía Rápida</h2>
+        <div class="space-y-6">
+          <div class="bg-surface p-6 rounded-xl border border-white/5">
+            <h4 class="text-text font-bold mb-2">1. Concentrada (Whey Concentrate)</h4>
+            <p class="text-sm">La opción más económica. Contiene algo más de lactosa y grasas, pero es excelente para el 90% de los usuarios.</p>
+          </div>
+          <div class="bg-surface p-6 rounded-xl border border-white/5">
+            <h4 class="text-text font-bold mb-2">2. Isolatada (Whey Isolate)</h4>
+            <p class="text-sm font-bold text-primary">Nuestra recomendada.</p>
+            <p class="text-sm">Proceso de filtrado superior. Casi cero lactosa y grasas. Perfecta si tienes digestiones pesadas.</p>
+          </div>
+        </div>
+
+        <div class="my-12">
+          <AmazonProduct {...product} />
+        </div>
+
+        <AdSense type="in-feed" />
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/20 flex gap-6 items-center">
+          <Info class="text-primary shrink-0" size={32} />
+          <p class="text-sm"><strong>CONSEJO ELITE:</strong> No dejes que el marketing te engañe. Si tu dieta ya tiene suficiente pollo, huevos y legumbres, la proteína en polvo es totalmente opcional.</p>
+        </div>
+      </div>
+
+      <AdSense type="square" />
+    </div>
+  </article>
+</Layout>

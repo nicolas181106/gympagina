@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AdSense from '../../components/AdSense.astro';
+import { Clock, Zap, Dumbbell, Flame, Target } from 'lucide-astro';
+
+const day1 = [
+  { exercise: "Press de Banca con Mancuernas", sets: "4", reps: "8-10" },
+  { exercise: "Press Militar Sentado", sets: "3", reps: "10-12" },
+  { exercise: "Aperturas con Mancuernas", sets: "3", reps: "12-15" },
+  { exercise: "Extensiones de Tríceps", sets: "3", reps: "12-15" }
+];
+
+const day2 = [
+  { exercise: "Remo con Mancuerna a una mano", sets: "4", reps: "8-10" },
+  { exercise: "Pájaros (Hombro Posterior)", sets: "3", reps: "15" },
+  { exercise: "Curl de Bíceps Alterno", sets: "3", reps: "10-12" },
+  { exercise: "Martillo", sets: "2", reps: "12-15" }
+];
+
+const day3 = [
+  { exercise: "Sentadilla Goblet", sets: "4", reps: "10-12" },
+  { exercise: "Peso Muerto Rumano (Mancuernas)", sets: "4", reps: "8-10" },
+  { exercise: "Zancadas Estáticas", sets: "3", reps: "12 por pierna" },
+  { exercise: "Elevación de Gemelos", sets: "4", reps: "15-20" }
+];
+---
+
+<Layout title="Rutina Push/Pull/Legs en Casa | MicroGym Elite" description="La rutina de división más efectiva adaptada para entrenar en casa con mancuernas. Maximiza la hipertrofia dividiendo tus grupos musculares.">
+  <Navbar />
+  
+  <article class="pt-32 pb-24">
+    <div class="container max-w-4xl">
+      <header class="mb-12">
+        <span class="text-primary font-black tracking-widest text-[10px] uppercase">RUTINA AVANZADA</span>
+        <h1 class="text-4xl md:text-6xl mt-4 mb-8 leading-tight">Push / Pull / Legs: <span class="text-gradient">Hipertrofia</span> en Casa</h1>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Clock class="text-primary" size={20} />
+            <div>
+              <span class="text-[10px] text-text-dim block uppercase font-bold">Sesión</span>
+              <span class="text-sm font-bold">60 min</span>
+            </div>
+          </div>
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Target class="text-primary" size={20} />
+            <div>
+              <span class="text-[10px] text-text-dim block uppercase font-bold">Objetivo</span>
+              <span class="text-sm font-bold">Músculo</span>
+            </div>
+          </div>
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Dumbbell class="text-primary" size={20} />
+            <div>
+              <span class="text-[10px] text-text-dim block uppercase font-bold">Equipo</span>
+              <span class="text-sm font-bold">Mancuernas + Banco</span>
+            </div>
+          </div>
+          <div class="bg-surface p-4 rounded-xl border border-white/5 flex items-center gap-3">
+            <Flame class="text-primary" size={20} />
+            <div>
+              <span class="text-[10px] text-text-dim block uppercase font-bold">Días</span>
+              <span class="text-sm font-bold">3-6 días/sem</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <AdSense type="banner" />
+
+      <div class="prose prose-invert max-w-none space-y-12 text-text-muted">
+        <p class="text-lg">
+          La división Push/Pull/Legs (Empuje/Tracción/Pierna) es posiblemente la forma más lógica y efectiva de organizar el entrenamiento de fuerza. Al agrupar los músculos que trabajan juntos, permites un descanso óptimo y una frecuencia de entrenamiento adaptable.
+        </p>
+
+        <section>
+          <h2 class="text-2xl text-text font-bold mb-6 flex items-center gap-3">
+            <Zap class="text-primary" /> Día 1: Empuje (Pecho, Hombro, Tríceps)
+          </h2>
+          <div class="bg-surface rounded-2xl overflow-hidden border border-white/5">
+            <table class="w-full text-left">
+              <thead class="bg-white/5 text-text uppercase text-[10px] font-black tracking-widest">
+                <tr><th class="p-4">Ejercicio</th><th class="p-4">Series</th><th class="p-4">Reps</th></tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-sm">
+                {day1.map(ex => (
+                  <tr><td class="p-4 text-text font-bold">{ex.exercise}</td><td class="p-4">{ex.sets}</td><td class="p-4">{ex.reps}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <AdSense type="in-feed" />
+
+        <section>
+          <h2 class="text-2xl text-text font-bold mb-6 flex items-center gap-3">
+            <Zap class="text-primary" /> Día 2: Tracción (Espalda, Bíceps)
+          </h2>
+          <div class="bg-surface rounded-2xl overflow-hidden border border-white/5">
+            <table class="w-full text-left">
+              <thead class="bg-white/5 text-text uppercase text-[10px] font-black tracking-widest">
+                <tr><th class="p-4">Ejercicio</th><th class="p-4">Series</th><th class="p-4">Reps</th></tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-sm">
+                {day2.map(ex => (
+                  <tr><td class="p-4 text-text font-bold">{ex.exercise}</td><td class="p-4">{ex.sets}</td><td class="p-4">{ex.reps}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl text-text font-bold mb-6 flex items-center gap-3">
+            <Zap class="text-primary" /> Día 3: Piernas
+          </h2>
+          <div class="bg-surface rounded-2xl overflow-hidden border border-white/5">
+            <table class="w-full text-left">
+              <thead class="bg-white/5 text-text uppercase text-[10px] font-black tracking-widest">
+                <tr><th class="p-4">Ejercicio</th><th class="p-4">Series</th><th class="p-4">Reps</th></tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-sm">
+                {day3.map(ex => (
+                  <tr><td class="p-4 text-text font-bold">{ex.exercise}</td><td class="p-4">{ex.sets}</td><td class="p-4">{ex.reps}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <AdSense type="square" />
+    </div>
+  </article>
+</Layout>

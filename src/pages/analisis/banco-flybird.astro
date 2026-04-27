@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AdSense from '../../components/AdSense.astro';
+import AmazonProduct from '../../components/AmazonProduct.astro';
+import { Star, CheckCircle2, XCircle, ChevronRight } from 'lucide-astro';
+
+const product = {
+  title: "Banco de Musculación Plegable Flybird",
+  price: "159€",
+  rating: "5",
+  image: "/images/hero.png",
+  link: "https://amzn.to/3example",
+  tag: "MEJOR CALIDAD/PRECIO"
+};
+---
+
+<Layout title="Review: Banco Plegable Flybird | MicroGym Elite" description="Análisis profundo del banco de pesas más vendido para casa. ¿Es estable? ¿Cuánto peso soporta realmente?">
+  <Navbar />
+  
+  <article class="pt-32 pb-24">
+    <div class="container max-w-4xl">
+      <header class="mb-12">
+        <span class="text-primary font-black tracking-widest text-[10px] uppercase">REVIEW GEAR</span>
+        <h1 class="text-4xl md:text-6xl mt-4 mb-6 leading-tight">Flybird Bench: <span class="text-gradient">Estabilidad y Ahorro</span> de Espacio</h1>
+        <div class="flex items-center gap-4 text-text-dim text-xs font-bold uppercase tracking-widest">
+          <span>Actualizado 2024</span>
+          <span>•</span>
+          <span>Equipamiento Básico</span>
+        </div>
+      </header>
+
+      <div class="glass p-8 rounded-3xl mb-16 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <img src="/images/hero.png" alt="Flybird Bench" class="rounded-2xl w-full" />
+        </div>
+        <div>
+          <div class="flex items-center gap-1 text-yellow-400 mb-4">
+            <Star size={20} fill="currentColor" />
+            <Star size={20} fill="currentColor" />
+            <Star size={20} fill="currentColor" />
+            <Star size={20} fill="currentColor" />
+            <Star size={20} fill="currentColor" />
+          </div>
+          <p class="text-text-muted mb-8 italic">"Si no tienes un banco, la mitad de tus ejercicios con mancuernas pierden efectividad. El Flybird es el estándar para casa."</p>
+          <a href={product.link} class="btn btn-primary w-full text-center text-black">Ver Oferta en Amazon</a>
+        </div>
+      </div>
+
+      <AdSense type="banner" />
+
+      <div class="prose prose-invert max-w-none space-y-8 text-text-muted">
+        <h2 class="text-3xl text-text font-bold mt-12">Análisis Técnico</h2>
+        <p>
+          El banco Flybird se ha hecho famoso por una razón: <strong>su capacidad de plegado</strong>. Una vez terminas tu entrenamiento, el banco se pliega hasta ocupar solo 20cm de grosor, permitiendo guardarlo detrás de una puerta o debajo de la cama.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 my-12">
+          <div class="bg-surface p-8 rounded-2xl border border-white/5">
+            <h3 class="text-text font-bold mb-4 flex items-center gap-2 text-primary">
+              <CheckCircle2 size={20} /> Ventajas
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li>✓ Soporta hasta 300kg de carga total.</li>
+              <li>✓ Se pliega en menos de 10 segundos.</li>
+              <li>✓ Múltiples posiciones (plano, inclinado, declinado).</li>
+              <li>✓ Tapicería resistente al sudor.</li>
+            </ul>
+          </div>
+          <div class="bg-surface p-8 rounded-2xl border border-white/5">
+            <h3 class="text-text font-bold mb-4 flex items-center gap-2 text-red-500">
+              <XCircle size={20} /> Desventajas
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li>✗ El hueco entre el asiento y el respaldo puede ser molesto.</li>
+              <li>✗ No es un banco de competición olímpico.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="text-3xl text-text font-bold mt-12">¿Vale la pena?</h2>
+        <p>
+          Para el usuario medio que entrena con mancuernas ajustables (como las Bowflex 552), este banco es el complemento perfecto. Permite hacer press inclinado, remo con apoyo y otros ejercicios fundamentales que son imposibles de hacer en el suelo.
+        </p>
+
+        <div class="my-12">
+          <AmazonProduct {...product} />
+        </div>
+
+        <AdSense type="in-feed" />
+
+        <div class="bg-surface p-12 rounded-3xl border border-white/5 text-center">
+          <h3 class="text-2xl text-text mb-6">Comparativa Rápida</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="p-4 border border-white/10 rounded-xl">
+              <span class="block text-primary font-black mb-1">MARCA</span>
+              <span class="text-sm">Flybird</span>
+            </div>
+            <div class="p-4 border border-white/10 rounded-xl">
+              <span class="block text-primary font-black mb-1">PESO MÁX</span>
+              <span class="text-sm">300 KG</span>
+            </div>
+            <div class="p-4 border border-white/10 rounded-xl">
+              <span class="block text-primary font-black mb-1">POSICIONES</span>
+              <span class="text-sm">7+3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <AdSense type="square" />
+    </div>
+  </article>
+</Layout>

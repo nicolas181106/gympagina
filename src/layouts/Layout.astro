@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "La guía definitiva para maximizar tu rendimiento y salud con el mínimo espacio. Equipamiento, rutinas y suplementación inteligente." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | MicroGym Elite</title>
+		
+		<!-- SEO Meta Tags -->
+		<meta name="robots" content="index, follow" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/og-image.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		
+		<!-- AdSense simulated script -->
+		<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+	</head>
+	<body>
+		<slot />
+		
+		<style is:global>
+			/* Custom scrollbar for premium feel */
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+			::-webkit-scrollbar-track {
+				background: var(--bg);
+			}
+			::-webkit-scrollbar-thumb {
+				background: var(--surface-accent);
+				border-radius: 5px;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: var(--primary);
+			}
+		</style>
+	</body>
+</html>

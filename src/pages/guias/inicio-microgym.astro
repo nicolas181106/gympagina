@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AdSense from '../../components/AdSense.astro';
+import AmazonProduct from '../../components/AmazonProduct.astro';
+
+const recommendedProduct = {
+  title: "Mancuernas Ajustables Bowflex SelectTech 552",
+  price: "429€",
+  rating: "5",
+  image: "/images/dumbbells.png",
+  link: "https://amzn.to/3example",
+  tag: "RECOMENDADO"
+};
+---
+
+<Layout title="Guía de Inicio: El MicroGym de 2 metros cuadrados | MicroGym Elite" description="Aprende a montar un gimnasio completo en el mínimo espacio. Equipamiento básico y consejos de organización.">
+  <Navbar />
+  
+  <article class="pt-32 pb-24">
+    <div class="container max-w-4xl">
+      <header class="mb-16">
+        <span class="text-primary font-black tracking-widest text-[10px] uppercase">GUÍA DE INICIO</span>
+        <h1 class="text-5xl md:text-7xl mt-6 mb-8 leading-tight">El MicroGym de <span class="text-gradient">2 Metros</span> Cuadrados</h1>
+        <div class="flex items-center gap-6 text-text-dim text-sm uppercase tracking-widest font-bold">
+          <span>Actualizado: 2024</span>
+          <span>•</span>
+          <span>Lectura: 10 min</span>
+        </div>
+      </header>
+
+      <AdSense type="banner" />
+
+      <div class="prose prose-invert max-w-none prose-p:text-text-muted prose-p:text-lg prose-p:leading-relaxed prose-h2:text-4xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:font-extrabold prose-li:text-text-muted prose-li:text-lg">
+        <p>
+          Montar un gimnasio en casa no requiere de una habitación dedicada de 20 metros cuadrados ni de un garaje inmenso. En la era de la densificación urbana, la capacidad de entrenar en el salón de tu casa es, más que un lujo, una necesidad para muchos atletas de alto rendimiento.
+        </p>
+
+        <h2>1. La Filosofía del Espacio Inteligente</h2>
+        <p>
+          La clave de un MicroGym exitoso es la <strong>multifuncionalidad</strong>. Cada pieza de equipo que compres debe ganarse su lugar. Si una máquina solo sirve para un ejercicio, no tiene espacio en tu casa.
+        </p>
+        <ul class="space-y-4">
+          <li><strong>Verticalidad:</strong> Usa las paredes para colgar equipo.</li>
+          <li><strong>Plegabilidad:</strong> El equipo debe desaparecer cuando termines.</li>
+          <li><strong>Calidad sobre Cantidad:</strong> Una buena pareja de mancuernas ajustables sustituye a 15 pares tradicionales.</li>
+        </ul>
+
+        <div class="my-16 bg-surface p-1 rounded-2xl border border-white/5 shadow-2xl">
+          <img src="/images/hero.png" alt="Concepto MicroGym" class="rounded-xl w-full" />
+          <p class="text-center text-text-dim text-xs py-4 italic">Un ejemplo de organización inteligente en menos de 3m².</p>
+        </div>
+
+        <h2>2. El Equipamiento Indispensable</h2>
+        <p>
+          Para el 90% de la población, estos tres elementos son suficientes para construir un cuerpo atlético y fuerte:
+        </p>
+
+        <div class="my-12">
+          <AmazonProduct {...recommendedProduct} />
+        </div>
+
+        <p>
+          Las mancuernas ajustables son, sin duda, la mejor inversión que puedes hacer. Te permiten pasar de un entrenamiento de fuerza pura a uno de hipertrofia o resistencia sin cambiar de herramienta.
+        </p>
+
+        <AdSense type="in-feed" />
+
+        <h2>3. Cómo Organizar tu "Corner de Fuerza"</h2>
+        <p>
+          No entrenes donde duermes, si puedes evitarlo. Pero si tienes que hacerlo, crea un ancla visual. Una alfombrilla de alta densidad de 2x1 metros delimita tu zona sagrada de entrenamiento.
+        </p>
+        <p>
+          Al terminar, limpia tu sudor y guarda el equipo. Mantener el orden es crucial para que tu casa siga siendo un hogar y no se convierta en un almacén de hierro.
+        </p>
+
+        <div class="bg-primary/5 border-l-4 border-primary p-8 my-12 rounded-r-xl italic text-lg">
+          "La falta de espacio es una excusa. La falta de voluntad es la realidad. Con dos mancuernas y dos metros puedes llegar al 1% de la población mundial en forma."
+        </div>
+
+        <AdSense type="square" />
+      </div>
+
+      <footer class="mt-24 pt-12 border-t border-white/5">
+        <h4 class="text-2xl mb-8">¿Te ha sido útil esta guía?</h4>
+        <div class="flex gap-4">
+          <button class="btn btn-secondary py-3 px-6">Compartir</button>
+          <a href="/guias" class="btn btn-primary py-3 px-6">Ver más guías</a>
+        </div>
+      </footer>
+    </div>
+  </article>
+</Layout>

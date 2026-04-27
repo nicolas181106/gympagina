@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AdSense from '../../components/AdSense.astro';
+import AmazonProduct from '../../components/AmazonProduct.astro';
+import { Star, CheckCircle2, XCircle, Info } from 'lucide-astro';
+
+const product = {
+  title: "Mancuernas Ajustables Bowflex SelectTech 552",
+  price: "429€",
+  rating: "5",
+  image: "/images/dumbbells.png",
+  link: "https://amzn.to/3example",
+  tag: "NUESTRA ELECCIÓN"
+};
+---
+
+<Layout title="Review: Bowflex SelectTech 552 | MicroGym Elite" description="Análisis detallado de las mancuernas ajustables más famosas del mundo. ¿Valen la pena para un gimnasio en casa pequeño?">
+  <Navbar />
+  
+  <article class="pt-32 pb-24">
+    <div class="container max-w-4xl">
+      <header class="mb-12">
+        <span class="text-primary font-black tracking-widest text-[10px] uppercase">REVIEW PROFUNDA</span>
+        <h1 class="text-4xl md:text-6xl mt-4 mb-6 leading-tight">Bowflex SelectTech 552: <span class="text-gradient">¿El Santo Grial</span> del Ahorro de Espacio?</h1>
+        <div class="flex items-center gap-4 text-text-dim text-xs font-bold uppercase tracking-widest">
+          <span>Por Equipo Elite</span>
+          <span>•</span>
+          <span>15 min de lectura</span>
+        </div>
+      </header>
+
+      <div class="grid lg:grid-cols-2 gap-12 mb-16 items-center">
+        <div class="glass p-4 rounded-3xl">
+          <img src="/images/dumbbells.png" alt="Bowflex 552" class="rounded-2xl w-full" />
+        </div>
+        <div>
+          <div class="flex items-center gap-1 text-yellow-400 mb-4">
+            <Star size={20} fill="currentColor" />
+            <Star size={20} fill="currentColor" />
+            <Star size={20} fill="currentColor" />
+            <Star size={20} fill="currentColor" />
+            <Star size={20} fill="currentColor" />
+            <span class="text-text font-bold ml-2">4.9/5</span>
+          </div>
+          <p class="text-text-muted text-lg leading-relaxed mb-8">
+            Las Bowflex 552 han dominado el mercado de las mancuernas ajustables durante más de una década. Pero, ¿siguen siendo la mejor opción en 2024 con la llegada de competidores más baratos?
+          </p>
+          <a href={product.link} class="btn btn-primary w-full text-center text-black">Ver Precio en Amazon</a>
+        </div>
+      </div>
+
+      <AdSense type="banner" />
+
+      <div class="prose prose-invert max-w-none space-y-8 text-text-muted">
+        <h2 class="text-3xl text-text font-bold mt-12">Lo que hace que las Bowflex 552 sean únicas</h2>
+        <p class="text-lg">
+          La característica principal de las SelectTech 552 es su sistema de dial. Con un simple giro de la rueda en cada extremo, puedes cambiar el peso de 2 kg a 24 kg en cuestión de segundos. Esto sustituye a **15 pares de mancuernas individuales**.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 my-12">
+          <div class="bg-green-500/5 border border-green-500/20 p-8 rounded-2xl">
+            <h3 class="text-green-500 font-bold mb-4 flex items-center gap-2">
+              <CheckCircle2 size={20} /> Pros
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li>✓ Increíble ahorro de espacio (menos de 1m²).</li>
+              <li>✓ Cambio de peso ultra-rápido.</li>
+              <li>✓ Incrementos pequeños (ideales para progresión).</li>
+              <li>✓ Construcción duradera si se cuidan bien.</li>
+            </ul>
+          </div>
+          <div class="bg-red-500/5 border border-red-500/20 p-8 rounded-2xl">
+            <h3 class="text-red-500 font-bold mb-4 flex items-center gap-2">
+              <XCircle size={20} /> Contras
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li>✗ Longitud fija (pueden ser aparatosas al principio).</li>
+              <li>✗ No aptas para ser lanzadas al suelo.</li>
+              <li>✗ El mecanismo de plástico requiere cuidado.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="text-3xl text-text font-bold mt-12">Rendimiento en el "MicroGym"</h2>
+        <p class="text-lg leading-relaxed">
+          Para alguien que entrena en una habitación pequeña, estas mancuernas son un cambio de juego. En lugar de tener un rack ocupando toda la pared, tienes dos pequeñas bases que caben debajo de la cama o en un rincón del armario.
+        </p>
+
+        <div class="bg-surface p-8 rounded-2xl border border-white/5 my-12">
+          <div class="flex items-start gap-4">
+            <Info class="text-primary shrink-0" />
+            <p class="text-sm italic">
+              "He usado estas mancuernas durante 2 años en un piso de 40m². La capacidad de pasar de un press de banca pesado a unas elevaciones laterales ligeras sin moverme del sitio es lo que me ha permitido ser constante." - <strong>Analista Senior de MicroGym Elite.</strong>
+            </p>
+          </div>
+        </div>
+
+        <AdSense type="in-feed" />
+
+        <h2 class="text-3xl text-text font-bold mt-12">Veredicto Final</h2>
+        <p class="text-lg">
+          Si tienes el presupuesto y el espacio es tu prioridad número uno, las Bowflex 552 siguen siendo la recomendación de oro. Su versatilidad y facilidad de uso compensan con creces su precio.
+        </p>
+      </div>
+
+      <div class="mt-16">
+        <AmazonProduct {...product} tag="MEJOR VALOR" />
+      </div>
+    </div>
+  </article>
+</Layout>
