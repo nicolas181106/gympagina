@@ -1,14 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import AdSense from '../../components/AdSense.astro';
 import AmazonProduct from '../../components/AmazonProduct.astro';
-import { Star, CheckCircle2, XCircle, ChevronRight } from 'lucide-astro';
+import { CheckCircle2, XCircle, ChevronRight } from 'lucide-astro';
 
 const product = {
   title: "Banco de Musculación Plegable Flybird",
-  price: "159€",
-  rating: "5",
   image: "/images/hero.png",
   link: "https://amzn.to/3example",
   tag: "MEJOR CALIDAD/PRECIO"
@@ -35,19 +32,13 @@ const product = {
           <img src="/images/hero.png" alt="Flybird Bench" class="rounded-2xl w-full" />
         </div>
         <div>
-          <div class="flex items-center gap-1 text-yellow-400 mb-4">
-            <Star size={20} fill="currentColor" />
-            <Star size={20} fill="currentColor" />
-            <Star size={20} fill="currentColor" />
-            <Star size={20} fill="currentColor" />
-            <Star size={20} fill="currentColor" />
-          </div>
+          
           <p class="text-text-muted mb-8 italic">"Si no tienes un banco, la mitad de tus ejercicios con mancuernas pierden efectividad. El Flybird es el estándar para casa."</p>
-          <a href={product.link} class="btn btn-primary w-full text-center text-black">Ver Oferta en Amazon</a>
+          <a href={product.link} class="btn btn-primary w-full text-center text-black">VER EN AMAZON</a>
         </div>
       </div>
 
-      <AdSense type="banner" />
+      
 
       <div class="prose prose-invert max-w-none space-y-8 text-text-muted">
         <h2 class="text-3xl text-text font-bold mt-12">Análisis Técnico</h2>
@@ -87,7 +78,7 @@ const product = {
           <AmazonProduct {...product} />
         </div>
 
-        <AdSense type="in-feed" />
+        
 
         <div class="bg-surface p-12 rounded-3xl border border-white/5 text-center">
           <h3 class="text-2xl text-text mb-6">Comparativa Rápida</h3>
@@ -108,7 +99,10 @@ const product = {
         </div>
       </div>
 
-      <AdSense type="square" />
+      
     </div>
   </article>
 </Layout>
+
+
+

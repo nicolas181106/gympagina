@@ -2,13 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import AmazonProduct from '../../components/AmazonProduct.astro';
-import AdSense from '../../components/AdSense.astro';
 import { Target, ShieldCheck, Zap, Info } from 'lucide-astro';
 
 const product = {
   title: "Proteína Whey Isolada de Alta Calidad (2kg)",
-  price: "59€",
-  rating: "5",
   image: "/images/hero.png",
   link: "https://amzn.to/3example",
   tag: "RECOMENDACIÓN ELITE"
@@ -30,7 +27,7 @@ const product = {
         </div>
       </header>
 
-      <AdSense type="banner" />
+      
 
       <div class="prose prose-invert max-w-none space-y-8 text-text-muted">
         <p class="text-lg leading-relaxed">
@@ -69,7 +66,7 @@ const product = {
           <AmazonProduct {...product} />
         </div>
 
-        <AdSense type="in-feed" />
+        
 
         <div class="bg-primary/5 p-8 rounded-2xl border border-primary/20 flex gap-6 items-center">
           <Info class="text-primary shrink-0" size={32} />
@@ -77,7 +74,10 @@ const product = {
         </div>
       </div>
 
-      <AdSense type="square" />
+      
     </div>
   </article>
 </Layout>
+
+
+

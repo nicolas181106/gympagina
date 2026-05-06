@@ -1,16 +1,15 @@
 ---
-import { ExternalLink, Star } from 'lucide-astro';
+import { ExternalLink } from 'lucide-astro';
 
 interface Props {
   title: string;
-  price: string;
-  rating: string;
   image: string;
   link: string;
   tag?: string;
+  slug?: string;
 }
 
-const { title, price, rating, image, link, tag = "RECOMENDADO" } = Astro.props;
+const { title, image, link, tag = "RECOMENDADO", slug } = Astro.props;
 ---
 
 <div class="glass p-6 flex flex-col gap-6 transition-all duration-300 hover:border-primary hover:-translate-y-1 overflow-hidden relative group">
@@ -25,22 +24,21 @@ const { title, price, rating, image, link, tag = "RECOMENDADO" } = Astro.props;
   </div>
 
   <div class="flex flex-col flex-grow gap-3">
-    <div class="flex items-center gap-1 text-yellow-400">
-      {[1, 2, 3, 4, 5].map((s) => (
-        <Star size={14} fill={s <= parseInt(rating) ? "currentColor" : "none"} class={s <= parseInt(rating) ? "text-yellow-400" : "text-text-dim"} />
-      ))}
-      <span class="text-xs font-semibold text-text-muted ml-1">({rating}/5)</span>
-    </div>
-    
     <h3 class="text-lg leading-snug h-12 overflow-hidden line-clamp-2 text-text">
       {title}
     </h3>
-    
-    <div class="flex justify-between items-center mt-auto pt-4">
-      <span class="text-2xl font-black text-primary">{price}</span>
-      <a href={link} target="_blank" rel="nofollow sponsored" class="btn btn-primary px-4 py-2 text-[10px] flex items-center gap-2">
-        VER EN AMAZON <ExternalLink size={12} />
+    <div class="mt-auto pt-4 flex flex-col gap-3">
+
+      <a href={link} target="_blank" rel="nofollow sponsored" class="btn btn-primary w-full py-4 text-[10px] flex items-center justify-center gap-2">
+        VER EN AMAZON <ExternalLink size={14} />
       </a>
+      {slug && slug !== "#" && (
+        <a href={`/analisis/${slug}`} class="text-[10px] font-black tracking-widest uppercase text-center py-2 text-text-muted hover:text-primary transition-colors">
+          Leer Análisis Detallado →
+        </a>
+      )}
     </div>
+
   </div>
 </div>
+

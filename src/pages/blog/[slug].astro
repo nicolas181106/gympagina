@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import { Calendar, Clock, ArrowLeft, Share2 } from 'lucide-astro';
+
+export async function getStaticPaths() {
+  const posts = [
+    {
+      title: "5 Errores fatales al montar tu gimnasio en el salón",
+      content: "Montar un gimnasio en casa parece sencillo: compras un par de mancuernas, una esterilla y listo. Sin embargo, la realidad de entrenar en el mismo lugar donde descansas tiene sus trampas...",
+      body: `
+        <p class="lead text-2xl text-text mb-12 font-medium italic">
+          Montar un gimnasio en casa parece sencillo: compras un par de mancuernas, una esterilla y listo. Sin embargo, la realidad de entrenar en el mismo lugar donde descansas tiene sus trampas que pueden sabotear tu progreso antes de empezar.
+        </p>
+        
+        <p>
+          El primer error es subestimar el <strong>suelo</strong>. No se trata solo de proteger las baldosas; se trata de estabilidad. Un suelo demasiado blando absorbe energía en tus levantamientos, mientras que uno muy duro puede dañar tus articulaciones.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">La trampa del <span class="text-primary underline decoration-primary/20 underline-offset-8">almacenamiento</span></h2>
+        <p>
+          Si tienes que mover tres sillas y una mesa para empezar a entrenar, dejarás de hacerlo en dos semanas. La fricción es el enemigo número uno de la constancia. Necesitas un espacio donde el material esté listo o sea extremadamente fácil de desplegar.
+        </p>
+
+        <blockquote class="text-2xl font-medium leading-relaxed my-16">
+          "Tu gimnasio debe ser un santuario de rendimiento, no un obstáculo en tu salón. Si el espacio te agobia, tu entrenamiento sufrirá."
+        </blockquote>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">Conclusión <span class="text-primary underline decoration-primary/20 underline-offset-8">estratégica</span></h2>
+        <p>
+          Antes de comprar esa jaula de potencia gigante, mide tres veces. En un piso urbano, el minimalismo inteligente siempre gana a la cantidad de máquinas.
+        </p>
+      `,
+      date: "24 Abr 2026",
+      readTime: "6 min",
+      category: "Gimnasio en Casa",
+      image: "/images/hero.png",
+      slug: "errores-gimnasio-casa"
+    },
+    {
+      title: "Cómo progresar en dominadas si no tienes barra",
+      content: "Las dominadas son el rey de los ejercicios de tirón, pero ¿qué pasa si vives en un piso de alquiler donde no puedes taladrar o tus marcos de puerta son de papel? No te preocupes...",
+      body: `
+        <p class="lead text-2xl text-text mb-12 font-medium italic">
+          Las dominadas son el rey de los ejercicios de tirón, pero ¿qué pasa si vives en un piso de alquiler donde no puedes taladrar o tus marcos de puerta son de papel? La biomecánica nos ofrece soluciones ingeniosas.
+        </p>
+        
+        <p>
+          El <strong>remo invertido bajo una mesa</strong> robusta es el sustituto natural. Al cambiar el ángulo de tirón, trabajas los mismos grupos musculares (dorsales, bíceps y core) con una ventaja: puedes ajustar la intensidad simplemente moviendo la posición de tus pies.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">El poder de las <span class="text-primary underline decoration-primary/20 underline-offset-8">toallas</span></h2>
+        <p>
+          Colgar una toalla sobre una puerta abierta (siempre por el lado que cierra) te permite hacer remos a una mano o incluso trabajos de tracción isométrica que pondrán a prueba tu agarre como nada más.
+        </p>
+
+        <blockquote class="text-2xl font-medium leading-relaxed my-16">
+          "La gravedad es constante; tu ingenio debe ser variable. No necesitas una barra de hierro para construir una espalda de acero."
+        </blockquote>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">Veredicto <span class="text-primary underline decoration-primary/20 underline-offset-8">técnico</span></h2>
+        <p>
+          Entrenar en casa requiere adaptabilidad. Si dominas estos ejercicios alternativos, cuando vuelvas a una barra real, tus marcas habrán volado.
+        </p>
+      `,
+      date: "18 Abr 2026",
+      readTime: "8 min",
+      category: "Entrenamiento",
+      image: "/images/dumbbells.png",
+      slug: "dominadas-sin-barra"
+    },
+    {
+      title: "El mito de las 2000 calorías: ¿Cuánto comer realmente?",
+      content: "La cifra de las 2000 calorías ha estado en las etiquetas de los alimentos durante décadas, pero es una simplificación peligrosa que puede estar saboteando tus resultados...",
+      body: `
+        <p class="lead text-2xl text-text mb-12 font-medium italic">
+          La cifra de las 2000 calorías ha estado en las etiquetas de los alimentos durante décadas, pero es una simplificación peligrosa que ignora tu individualidad biológica y tu nivel de actividad real.
+        </p>
+        
+        <p>
+          Para alguien que entrena en casa con alta intensidad, el <strong>NEAT</strong> (termogénesis de actividades no relacionadas con el ejercicio) suele ser menor que el de alguien que se desplaza a una oficina. Esto cambia drásticamente tu punto de equilibrio calórico.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">Calidad sobre <span class="text-primary underline decoration-primary/20 underline-offset-8">cantidad</span></h2>
+        <p>
+          No todas las calorías se metabolizan igual. El efecto térmico de la proteína es mucho mayor que el de las grasas. Entrenar en casa te da la ventaja de controlar al 100% tus ingredientes; no desperdicies esa oportunidad.
+        </p>
+
+        <blockquote class="text-2xl font-medium leading-relaxed my-16">
+          "Tu cuerpo no es una cuenta bancaria, es un laboratorio químico. Las calorías son solo una parte de la ecuación; las hormonas son el resto."
+        </blockquote>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">Conclusión <span class="text-primary underline decoration-primary/20 underline-offset-8">nutricional</span></h2>
+        <p>
+          Usa las 2000 calorías como punto de partida, pero ajusta según tu progreso en el espejo y tu energía en los entrenamientos. Escucha a tu cuerpo, no a las etiquetas.
+        </p>
+      `,
+      date: "10 Abr 2026",
+      readTime: "10 min",
+      category: "Nutrición",
+      image: "/images/hero.png",
+      slug: "mito-2000-calorias"
+    }
+  ];
+
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={`${post.title} | MicroGym Elite`} description={post.content.substring(0, 160)}>
+  <Navbar />
+  
+  <!-- Reading Progress Bar -->
+  <div class="fixed top-0 left-0 w-full h-1 z-50">
+    <div id="progress-bar" class="h-full bg-primary shadow-[0_0_10px_rgba(204,255,0,0.5)] transition-all duration-150 w-0"></div>
+  </div>
+
+  <main class="pt-32 pb-24">
+    <article class="container max-w-3xl">
+      <!-- Post Header -->
+      <header class="mb-16 text-center">
+        <a href="/blog" class="inline-flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-12 hover:-translate-x-2 transition-transform">
+          <ArrowLeft size={14} /> Volver al Blog
+        </a>
+        
+        <div class="flex items-center justify-center gap-4 text-[10px] font-black tracking-widest text-primary uppercase mb-8">
+          <span class="px-4 py-1.5 bg-primary/5 border border-primary/20 rounded-full">{post.category}</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-8xl mb-10 leading-[0.85] tracking-tighter">
+          {post.title.split(' ').slice(0, -2).join(' ')} <br />
+          <span class="text-gradient italic font-light">{post.title.split(' ').slice(-2).join(' ')}</span>
+        </h1>
+        
+        <div class="flex justify-center items-center gap-10 py-10 border-y border-white/5">
+          <div class="flex flex-col items-center">
+            <span class="text-[9px] font-black uppercase tracking-[0.2em] text-text-dim mb-2">Fecha</span>
+            <span class="text-xs font-bold text-text-muted">{post.date}</span>
+          </div>
+          <div class="w-px h-8 bg-white/5"></div>
+          <div class="flex flex-col items-center">
+            <span class="text-[9px] font-black uppercase tracking-[0.2em] text-text-dim mb-2">Lectura</span>
+            <span class="text-xs font-bold text-text-muted">{post.readTime}</span>
+          </div>
+          <div class="w-px h-8 bg-white/5"></div>
+          <button id="share-button" class="group flex flex-col items-center">
+            <span class="text-[9px] font-black uppercase tracking-[0.2em] text-text-dim mb-2 group-hover:text-primary">Compartir</span>
+            <Share2 size={14} class="group-hover:text-primary transition-colors" />
+          </button>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="relative mb-20 group">
+        <div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="relative glass p-2 rounded-[2.5rem] overflow-hidden shadow-2xl">
+          <img src={post.image} alt={post.title} class="w-full aspect-[21/9] object-cover rounded-[2.2rem]" />
+        </div>
+      </div>
+
+      <!-- Post Content -->
+      <div class="prose prose-invert max-w-none prose-p:text-xl prose-p:leading-[1.8] prose-p:text-text-muted prose-headings:text-text prose-headings:tracking-tighter prose-blockquote:border-primary prose-blockquote:bg-white/[0.02] prose-blockquote:p-8 prose-blockquote:rounded-2xl prose-blockquote:not-italic" set:html={post.body} />
+
+    </article>
+  </main>
+</Layout>
+
+<script>
+
+
+  // Progress Bar logic
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) progressBar.style.width = scrolled + '%';
+  });
+
+  // Share functionality
+  const shareBtn = document.getElementById('share-button');
+  shareBtn?.addEventListener('click', async () => {
+    const shareData = {
+      title: document.title,
+      text: 'Echa un vistazo a este artículo de MicroGym Elite',
+      url: window.location.href,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Enlace copiado al portapapeles');
+      }
+    } catch (err) {
+      console.error('Error al compartir:', err);
+    }
+  });
+</script>
+
+
+
+

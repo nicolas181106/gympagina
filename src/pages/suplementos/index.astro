@@ -2,13 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import AmazonProduct from '../../components/AmazonProduct.astro';
-import AdSense from '../../components/AdSense.astro';
-
 const supplements = [
   {
     title: "Creatina Monohidrato Creapure (500g)",
-    price: "34€",
-    rating: "5",
     image: "/images/hero.png",
     link: "https://amzn.to/3example",
     tag: "EL MEJOR SUPLEMENTO",
@@ -16,8 +12,6 @@ const supplements = [
   },
   {
     title: "Proteína Whey Isolada de Alta Calidad",
-    price: "59€",
-    rating: "5",
     image: "/images/hero.png",
     link: "https://amzn.to/3example",
     tag: "IMPRESCINDIBLE",
@@ -25,8 +19,6 @@ const supplements = [
   },
   {
     title: "Pre-Entreno Explosivo sin Estimulantes",
-    price: "29€",
-    rating: "4",
     image: "/images/hero.png",
     link: "https://amzn.to/3example",
     tag: "PARA ENTRENAR TARDE",
@@ -34,8 +26,6 @@ const supplements = [
   },
   {
     title: "Multivitamínico Completo para Atletas",
-    price: "19€",
-    rating: "5",
     image: "/images/hero.png",
     link: "https://amzn.to/3example",
     tag: "SALUD GENERAL",
@@ -59,7 +49,7 @@ const supplements = [
         </div>
 
         <div class="container mb-12">
-          <AdSense type="banner" />
+          
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -87,7 +77,7 @@ const supplements = [
             </ul>
           </div>
           <div>
-            <AdSense type="square" />
+            
           </div>
         </div>
       </div>
@@ -100,3 +90,6 @@ const supplements = [
     </div>
   </footer>
 </Layout>
+
+
+
