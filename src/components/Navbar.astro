@@ -1,9 +1,9 @@
 ---
-import { Dumbbell } from 'lucide-astro';
+import { Dumbbell, Menu, X } from 'lucide-astro';
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 py-4 md:py-6 bg-bg/70 backdrop-blur-2xl border-b border-white/5 shadow-2xl shadow-black/50">
-  <div class="container flex justify-between items-center">
+<nav class="fixed top-0 left-0 right-0 z-50 py-4 md:py-6 bg-bg/95 backdrop-blur-2xl border-b border-white/5 shadow-2xl shadow-black/50">
+  <div class="container flex justify-between items-center relative z-50">
     <a href="/" class="flex items-center gap-3 text-xl md:text-2xl font-extrabold tracking-tighter hover:scale-[1.02] transition-transform">
       <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
         <Dumbbell class="text-primary w-6 h-6" />
@@ -11,18 +11,136 @@ import { Dumbbell } from 'lucide-astro';
       <span>MicroGym<span class="text-gradient">Elite</span></span>
     </a>
     
+    <!-- Desktop Menu -->
     <ul class="hidden md:flex gap-8">
-      <li><a href="/guias" class="font-bold text-[10px] uppercase tracking-[0.2em] text-text-muted hover:text-primary transition-colors">Guías</a></li>
-      <li><a href="/analisis" class="font-bold text-[10px] uppercase tracking-[0.2em] text-text-muted hover:text-primary transition-colors">Análisis Gear</a></li>
-      <li><a href="/suplementos" class="font-bold text-[10px] uppercase tracking-[0.2em] text-text-muted hover:text-primary transition-colors">Suplementos</a></li>
-      <li><a href="/blog" class="font-bold text-[10px] uppercase tracking-[0.2em] text-text-muted hover:text-primary transition-colors">Blog</a></li>
-      <li><a href="/rutinas" class="font-bold text-[10px] uppercase tracking-[0.2em] text-text-muted hover:text-primary transition-colors">Rutinas</a></li>
+      {[
+        { name: "Análisis Gear", href: "/analisis" },
+        { name: "Suplementos", href: "/suplementos" },
+        { name: "Blog", href: "/blog" },
+        { name: "Rutinas", href: "/rutinas" }
+      ].map((item, index) => (
+        <li class="animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
+          <a href={item.href} class="font-bold text-[10px] uppercase tracking-[0.2em] text-text-muted hover:text-primary transition-colors">
+            {item.name}
+          </a>
+        </li>
+      ))}
     </ul>
 
+    <!-- Mobile Toggle -->
+    <button id="menu-toggle" class="md:hidden text-primary p-2 hover:bg-primary/10 rounded-lg transition-colors">
+      <Menu id="menu-icon" class="w-6 h-6" />
+      <X id="close-icon" class="w-6 h-6 hidden" />
+    </button>
+  </div>
 
-
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-[#050505] z-40 md:hidden">
+    <div class="container h-full flex flex-col justify-center items-center relative z-10">
+      <div class="flex flex-col gap-8 text-center">
+        {[
+          { name: "Análisis Gear", href: "/analisis" },
+          { name: "Suplementos", href: "/suplementos" },
+          { name: "Blog", href: "/blog" },
+          { name: "Rutinas", href: "/rutinas" }
+        ].map((item, index) => (
+          <a 
+            href={item.href} 
+            class="mobile-link text-3xl font-black uppercase tracking-tight hover:text-primary transition-colors opacity-0 translate-y-4"
+            style={`transition-delay: ${index * 50}ms`}
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
+    </div>
   </div>
 </nav>
+
+<style>
+  #mobile-menu {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .menu-open #mobile-menu {
+    display: block;
+    animation: menuFadeIn 0.3s ease-out forwards;
+  }
+  
+  .menu-closing #mobile-menu {
+    display: block;
+    animation: menuFadeOut 0.3s ease-out forwards;
+  }
+
+  .menu-open .mobile-link {
+    animation: slideInUp 0.5s ease-out forwards;
+  }
+
+  .menu-closing .mobile-link {
+    animation: slideOutDown 0.3s ease-out forwards;
+  }
+
+  @keyframes menuFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes menuFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  @keyframes slideInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideOutDown {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(20px); }
+  }
+</style>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const nav = document.querySelector('nav');
+
+  menuToggle?.addEventListener('click', () => {
+    if (nav?.classList.contains('menu-open')) {
+      nav.classList.remove('menu-open');
+      nav.classList.add('menu-closing');
+      
+      setTimeout(() => {
+        nav.classList.remove('menu-closing');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    } else {
+      nav?.classList.add('menu-open');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('menu-open');
+      nav?.classList.add('menu-closing');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      
+      setTimeout(() => {
+        nav?.classList.remove('menu-closing');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    });
+  });
+</script>
 
 
 

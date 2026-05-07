@@ -131,7 +131,7 @@ const featuredProducts = [
           {
             [
               { name: "Análisis Gear", icon: ShieldCheck, href: "/analisis" },
-              { name: "Guías Expertas", icon: Target, href: "/guias" },
+              { name: "Guías Expertas", icon: Target, href: "/blog" },
               { name: "Rutinas Elite", icon: Zap, href: "/rutinas" },
               { name: "Suplementos", icon: Dumbbell, href: "/suplementos" },
             ].map((cat) => (
@@ -222,7 +222,11 @@ const featuredProducts = [
           </a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {featuredProducts.map((product) => <AmazonProduct {...product} />)}
+          {featuredProducts.map((product, index) => (
+            <div class="animate-pop-in" style={`animation-delay: ${index * 150}ms`}>
+              <AmazonProduct {...product} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -260,7 +264,7 @@ const featuredProducts = [
               ))
             }
           </ul>
-          <a href="/guias/inicio-microgym" class="btn btn-primary text-black"
+          <a href="/blog/inicio-microgym" class="btn btn-primary text-black"
             >Aprender Más</a
           >
         </div>
@@ -308,7 +312,7 @@ const featuredProducts = [
           <ul class="space-y-3">
             <li>
               <a
-                href="/guias"
+                href="/blog"
                 class="text-sm text-text-muted hover:text-primary transition-colors"
                 >Guías de Entrenamiento</a
               >

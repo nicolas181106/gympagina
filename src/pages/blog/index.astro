@@ -1,57 +1,83 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/Navbar.astro';
-import { ArrowRight, Calendar, Clock } from 'lucide-astro';
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import { ArrowRight, Calendar, Clock } from "lucide-astro";
 
 const posts = [
   {
     title: "5 Errores fatales al montar tu gimnasio en el salón",
-    excerpt: "Evita estos fallos comunes que pueden arruinar tu entrenamiento y la convivencia en casa. Desde la elección del suelo hasta la ventilación.",
+    excerpt:
+      "La diferencia entre un templo del fitness y un trastero lleno de hierro reside en la estrategia. Analizamos los 5 fallos biomecánicos y logísticos que arruinan tu progreso.",
     date: "24 Abr 2026",
     readTime: "6 min",
 
     category: "Gimnasio en Casa",
+    image: "/images/blog/errores-gimnasio.png",
+    slug: "errores-gimnasio-casa",
+  },
+  {
+    title: "Guía de Inicio: El MicroGym de 2 metros cuadrados",
+    excerpt:
+      "Aprende a montar un gimnasio completo en el mínimo espacio. Equipamiento básico y consejos de organización para atletas urbanos.",
+    date: "02 May 2026",
+    readTime: "10 min",
+
+    category: "Guía",
     image: "/images/hero.png",
-    slug: "errores-gimnasio-casa"
+    slug: "inicio-microgym",
   },
   {
     title: "Cómo progresar en dominadas si no tienes barra",
-    excerpt: "Ejercicios alternativos de tirón que puedes hacer con una simple toalla o una mesa fuerte. La biomecánica no miente.",
+    excerpt:
+      "Ejercicios alternativos de tirón que puedes hacer con una simple toalla o una mesa fuerte. La biomecánica no miente.",
     date: "18 Abr 2026",
     readTime: "8 min",
 
-    category: "Entrenamiento",
-    image: "/images/dumbbells.png",
-    slug: "dominadas-sin-barra"
+    category: "Guía",
+    image: "/images/blog/dominadas-sin-barra.png",
+    slug: "dominadas-sin-barra",
   },
   {
     title: "El mito de las 2000 calorías: ¿Cuánto comer realmente?",
-    excerpt: "Aprende a calcular tus macros de forma sencilla según tu nivel de actividad real en casa. No todo es cardio.",
+    excerpt:
+      "Aprende a calcular tus macros de forma sencilla según tu nivel de actividad real en casa. No todo es cardio.",
     date: "10 Abr 2026",
     readTime: "10 min",
     author: "Nico Elite",
     category: "Nutrición",
-    image: "/images/hero.png",
-    slug: "mito-2000-calorias"
-  }
+    image: "/images/blog/mito-calorias.png",
+    slug: "mito-2000-calorias",
+  },
 ];
 
 const featuredPost = posts[0];
 ---
 
-<Layout title="Blog de Fitness Urbano | MicroGym Elite" description="Artículos, noticias y reflexiones sobre el mundo del fitness en casa, nutrición y estilo de vida de alto rendimiento.">
+<Layout
+  title="Blog de Fitness Urbano | MicroGym Elite"
+  description="Artículos, noticias y reflexiones sobre el mundo del fitness en casa, nutrición y estilo de vida de alto rendimiento."
+>
   <Navbar />
-  
+
   <main class="pt-32">
     <!-- Hero Header -->
     <section class="py-20 relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px]"></div>
+      <div
+        class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px]"
+      >
+      </div>
       <div class="container relative z-10">
         <div class="max-w-3xl">
-          <span class="text-primary font-black tracking-[0.3em] text-[10px] uppercase mb-6 block">MicroGym Insights</span>
-          <h1 class="text-6xl md:text-8xl mb-8 leading-[0.9]">El Blog <br /><span class="text-gradient">Elite</span></h1>
+          <span
+            class="text-primary font-black tracking-[0.3em] text-[10px] uppercase mb-6 block"
+            >MicroGym Insights</span
+          >
+          <h1 class="text-6xl md:text-8xl mb-8 leading-[0.9]">
+            El Blog <br /><span class="text-gradient">Elite</span>
+          </h1>
           <p class="text-text-muted text-xl leading-relaxed max-w-2xl">
-            Ciencia, biomecánica y cultura del fitness para quienes no tienen tiempo que perder ni espacio que malgastar.
+            Ciencia, biomecánica y cultura del fitness para quienes no tienen
+            tiempo que perder ni espacio que malgastar.
           </p>
         </div>
       </div>
@@ -60,16 +86,39 @@ const featuredPost = posts[0];
     <!-- Featured Post -->
     <section class="pb-24">
       <div class="container">
-        <a href={`/blog/${featuredPost.slug}`} class="group relative block aspect-[21/9] rounded-[2.5rem] overflow-hidden glass border-white/5">
-          <img src={featuredPost.image} alt={featuredPost.title} class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent"></div>
+        <a
+          href={`/blog/${featuredPost.slug}`}
+          class="group relative block aspect-[21/9] rounded-[2.5rem] overflow-hidden glass border-white/5"
+        >
+          <img
+            src={featuredPost.image}
+            alt={featuredPost.title}
+            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent"
+          >
+          </div>
           <div class="absolute bottom-0 left-0 p-8 md:p-16 max-w-4xl">
-            <div class="flex items-center gap-4 text-[10px] font-black tracking-widest text-primary uppercase mb-6">
-              <span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">{featuredPost.category}</span>
-              <span class="flex items-center gap-2"><Clock size={12} /> {featuredPost.readTime}</span>
+            <div
+              class="flex items-center gap-4 text-[10px] font-black tracking-widest text-primary uppercase mb-6"
+            >
+              <span
+                class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full"
+                >{featuredPost.category}</span
+              >
+              <span class="flex items-center gap-2"
+                ><Clock size={12} /> {featuredPost.readTime}</span
+              >
             </div>
-            <h2 class="text-4xl md:text-6xl mb-6 leading-tight group-hover:text-primary transition-colors">{featuredPost.title}</h2>
-            <p class="text-text-muted text-lg line-clamp-2 max-w-2xl">{featuredPost.excerpt}</p>
+            <h2
+              class="text-4xl md:text-6xl mb-6 leading-tight group-hover:text-primary transition-colors"
+            >
+              {featuredPost.title}
+            </h2>
+            <p class="text-text-muted text-lg line-clamp-2 max-w-2xl">
+              {featuredPost.excerpt}
+            </p>
           </div>
         </a>
       </div>
@@ -78,47 +127,71 @@ const featuredPost = posts[0];
     <!-- Post Grid -->
     <section class="section-padding bg-surface/20">
       <div class="container">
-        <div class="flex items-center justify-between mb-16 border-b border-white/5 pb-8">
+        <div
+          class="flex items-center justify-between mb-16 border-b border-white/5 pb-8"
+        >
           <h3 class="text-2xl font-bold tracking-tight">Últimos Artículos</h3>
           <div class="flex gap-4">
-            {["Todos", "Entrenamiento", "Nutrición", "Gear"].map(tag => (
-              <button class="text-[10px] font-black tracking-widest uppercase px-4 py-2 hover:text-primary transition-colors">{tag}</button>
-            ))}
+            {
+              ["Todos", "Guía", "Entrenamiento", "Nutrición", "Gear"].map(
+                (tag) => (
+                  <button class="text-[10px] font-black tracking-widest uppercase px-4 py-2 hover:text-primary transition-colors">
+                    {tag}
+                  </button>
+                ),
+              )
+            }
           </div>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {posts.map(post => (
-            <article class="group flex flex-col">
-              <a href={`/blog/${post.slug}`} class="aspect-[4/3] rounded-3xl overflow-hidden mb-8 glass border-white/5 block">
-                <img src={post.image} alt={post.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              </a>
-              <div class="flex items-center gap-4 text-[10px] font-black tracking-widest text-text-dim uppercase mb-4">
-                <span class="text-primary">{post.category}</span>
-                <span>•</span>
-                <span>{post.date}</span>
-              </div>
-              <h2 class="text-2xl mb-4 leading-snug group-hover:text-primary transition-colors">
-                <a href={`/blog/${post.slug}`}>{post.title}</a>
-              </h2>
-              <p class="text-text-muted leading-relaxed mb-8 line-clamp-3">{post.excerpt}</p>
-              <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <Calendar size={12} class="text-primary" />
-                  <span class="text-[10px] font-bold uppercase tracking-widest text-text-dim">{post.date}</span>
-                </div>
-                <a href={`/blog/${post.slug}`} class="text-primary hover:translate-x-2 transition-transform">
-                  <ArrowRight size={20} />
+          {
+            posts.map((post, index) => (
+              <article
+                class="group flex flex-col animate-pop-in"
+                style={`animation-delay: ${index * 150}ms`}
+              >
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="aspect-[4/3] rounded-3xl overflow-hidden mb-8 glass border-white/5 block"
+                >
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                 </a>
-              </div>
-
-            </article>
-          ))}
+                <div class="flex items-center gap-4 text-[10px] font-black tracking-widest text-text-dim uppercase mb-4">
+                  <span class="text-primary">{post.category}</span>
+                  <span>•</span>
+                  <span>{post.date}</span>
+                </div>
+                <h2 class="text-2xl mb-4 leading-snug group-hover:text-primary transition-colors">
+                  <a href={`/blog/${post.slug}`}>{post.title}</a>
+                </h2>
+                <p class="text-text-muted leading-relaxed mb-8 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <Calendar size={12} class="text-primary" />
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-text-dim">
+                      {post.date}
+                    </span>
+                  </div>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="text-primary hover:translate-x-2 transition-transform"
+                  >
+                    <ArrowRight size={20} />
+                  </a>
+                </div>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
-
-
   </main>
 
   <footer class="py-12 bg-bg border-t border-white/5 text-center">
@@ -127,7 +200,3 @@ const featuredPost = posts[0];
     </div>
   </footer>
 </Layout>
-
-
-
-

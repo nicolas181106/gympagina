@@ -14,6 +14,8 @@
   --font-outfit: "Outfit", sans-serif;
   
   --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-pop-in: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  --animate-slide-in: slideIn 0.5s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -21,9 +23,41 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(30px); }
+}
+
+@keyframes menuFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes menuFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 @layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   body {
     @apply bg-bg text-text font-outfit leading-relaxed overflow-x-hidden;
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -32,6 +66,10 @@
 }
 
 @layer components {
+  .nav-solid {
+    @apply bg-bg/95 backdrop-blur-2xl border-b border-white/5;
+  }
+  
   .container {
     @apply w-full max-w-7xl mx-auto px-6 md:px-8;
   }
@@ -68,7 +106,7 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: #1a1a1a;

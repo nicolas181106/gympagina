@@ -7,71 +7,143 @@ export async function getStaticPaths() {
   const posts = [
     {
       title: "5 Errores fatales al montar tu gimnasio en el salón",
-      content: "Montar un gimnasio en casa parece sencillo: compras un par de mancuernas, una esterilla y listo. Sin embargo, la realidad de entrenar en el mismo lugar donde descansas tiene sus trampas...",
+      content: "La diferencia entre un templo del fitness y un trastero lleno de hierro reside en la estrategia. Analizamos los fallos biomecánicos, logísticos y psicológicos que arruinan el progreso en casa.",
       body: `
         <p class="lead text-2xl text-text mb-12 font-medium italic">
-          Montar un gimnasio en casa parece sencillo: compras un par de mancuernas, una esterilla y listo. Sin embargo, la realidad de entrenar en el mismo lugar donde descansas tiene sus trampas que pueden sabotear tu progreso antes de empezar.
+          Montar un gimnasio en casa parece un acto de libertad, pero sin la planificación adecuada, puede convertirse en una pesadilla arquitectónica y mental. No se trata solo de comprar peso; se trata de optimizar el entorno para el alto rendimiento.
         </p>
         
         <p>
-          El primer error es subestimar el <strong>suelo</strong>. No se trata solo de proteger las baldosas; se trata de estabilidad. Un suelo demasiado blando absorbe energía en tus levantamientos, mientras que uno muy duro puede dañar tus articulaciones.
+          En la cultura de <strong>MicroGym Elite</strong>, entendemos que el espacio es el recurso más caro. Por eso, cometer estos errores no solo te quita metros cuadrados, sino que sabotea tu capacidad de generar intensidad real en tus entrenamientos.
         </p>
 
-        <h2 class="text-4xl mt-20 mb-8 italic font-light">La trampa del <span class="text-primary underline decoration-primary/20 underline-offset-8">almacenamiento</span></h2>
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">1. La trampa del <span class="text-primary underline decoration-primary/20 underline-offset-8">suelo inestable</span></h2>
         <p>
-          Si tienes que mover tres sillas y una mesa para empezar a entrenar, dejarás de hacerlo en dos semanas. La fricción es el enemigo número uno de la constancia. Necesitas un espacio donde el material esté listo o sea extremadamente fácil de desplegar.
+          El error más común es usar esterillas de yoga blandas para levantar pesas. Biomecánicamente, esto es un desastre. Un suelo demasiado acolchado disipa la fuerza que ejerces contra el piso (especialmente en sentadillas o peso muerto) y aumenta el riesgo de lesiones de tobillo. Necesitas una superficie de caucho de alta densidad que proteja tus baldosas, pero que ofrezca una base <strong>sólida como una roca</strong>.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">2. Ignorar la <span class="text-primary underline decoration-primary/20 underline-offset-8">fricción logística</span></h2>
+        <p>
+          Si para empezar tu sesión tienes que mover el sofá, plegar una mesa y sacar las mancuernas de debajo de la cama, vas a fallar. La voluntad es un recurso limitado. El diseño de tu gimnasio debe minimizar la "fricción": el tiempo transcurrido entre la decisión de entrenar y el primer levantamiento debe ser inferior a 120 segundos.
         </p>
 
         <blockquote class="text-2xl font-medium leading-relaxed my-16">
-          "Tu gimnasio debe ser un santuario de rendimiento, no un obstáculo en tu salón. Si el espacio te agobia, tu entrenamiento sufrirá."
+          "Un gimnasio que requiere una mudanza previa no es un gimnasio, es una tarea pendiente. El rendimiento exige accesibilidad instantánea."
         </blockquote>
 
-        <h2 class="text-4xl mt-20 mb-8 italic font-light">Conclusión <span class="text-primary underline decoration-primary/20 underline-offset-8">estratégica</span></h2>
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">3. El efecto <span class="text-primary underline decoration-primary/20 underline-offset-8">invernadero urbano</span></h2>
         <p>
-          Antes de comprar esa jaula de potencia gigante, mide tres veces. En un piso urbano, el minimalismo inteligente siempre gana a la cantidad de máquinas.
+          Un salón no está ventilado como un polígono industrial. Entrenar a alta intensidad genera una cantidad masiva de calor y humedad. Sin un flujo de aire estratégico o un ventilador de alta potencia, tu temperatura central subirá demasiado rápido, reduciendo tu rendimiento total y dejando un olor persistente en tus muebles. La ventilación cruzada es obligatoria.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">4. No delimitar el <span class="text-primary underline decoration-primary/20 underline-offset-8">anclaje mental</span></h2>
+        <p>
+          Tu cerebro asocia el salón con la relajación, Netflix o cenar. Si entrenas justo donde descansas sin un cambio de iluminación o de entorno, tu foco será pobre. Usa luces inteligentes con tonos fríos (6500K) durante el entreno para "despertar" al sistema nervioso y separarlo del ambiente cálido de descanso.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">5. El cementerio de <span class="text-primary underline decoration-primary/20 underline-offset-8">hierro inútil</span></h2>
+        <p>
+          Comprar máquinas de una sola función es el pecado capital del micro-gym. En un salón, cada objeto debe ser multifuncional. Una polea de pared o unas mancuernas ajustables de calidad sustituyen a diez máquinas grandes. Si no puedes hacer al menos cinco ejercicios diferentes con ello, no tiene lugar en tu casa.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-12 italic font-light">Veredicto <span class="text-primary underline decoration-primary/20 underline-offset-8">Elite</span></h2>
+        <p>
+          Entrenar en el salón no es una limitación, es una oportunidad de optimización extrema. Evita estos fallos, invierte en calidad sobre cantidad, y habrás construido una ventaja competitiva sin salir de casa.
         </p>
       `,
       date: "24 Abr 2026",
       readTime: "6 min",
       category: "Gimnasio en Casa",
-      image: "/images/hero.png",
+      image: "/images/blog/errores-gimnasio.png",
       slug: "errores-gimnasio-casa"
     },
     {
-      title: "Cómo progresar en dominadas si no tienes barra",
-      content: "Las dominadas son el rey de los ejercicios de tirón, pero ¿qué pasa si vives en un piso de alquiler donde no puedes taladrar o tus marcos de puerta son de papel? No te preocupes...",
+      title: "Guía de Inicio: El MicroGym de 2 metros cuadrados",
+      content: "Aprende a montar un gimnasio completo en el mínimo espacio. Equipamiento básico, filosofía de verticalidad y consejos de organización para atletas urbanos.",
       body: `
         <p class="lead text-2xl text-text mb-12 font-medium italic">
-          Las dominadas son el rey de los ejercicios de tirón, pero ¿qué pasa si vives en un piso de alquiler donde no puedes taladrar o tus marcos de puerta son de papel? La biomecánica nos ofrece soluciones ingeniosas.
+          Montar un gimnasio en casa no requiere de una habitación dedicada ni de un garaje inmenso. En la era de la densificación urbana, la capacidad de entrenar en el salón es una ventaja estratégica.
         </p>
         
         <p>
-          El <strong>remo invertido bajo una mesa</strong> robusta es el sustituto natural. Al cambiar el ángulo de tirón, trabajas los mismos grupos musculares (dorsales, bíceps y core) con una ventaja: puedes ajustar la intensidad simplemente moviendo la posición de tus pies.
+          Esta guía condensa la filosofía de <strong>MicroGym Elite</strong>: máximo rendimiento en el mínimo espacio posible. No estamos aquí para coleccionar máquinas, sino para construir resultados.
         </p>
 
-        <h2 class="text-4xl mt-20 mb-8 italic font-light">El poder de las <span class="text-primary underline decoration-primary/20 underline-offset-8">toallas</span></h2>
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">La Filosofía del <span class="text-primary underline decoration-primary/20 underline-offset-8">Espacio Inteligente</span></h2>
         <p>
-          Colgar una toalla sobre una puerta abierta (siempre por el lado que cierra) te permite hacer remos a una mano o incluso trabajos de tracción isométrica que pondrán a prueba tu agarre como nada más.
+          La clave de un MicroGym exitoso es la <strong>multifuncionalidad</strong>. Cada pieza de equipo que compres debe ganarse su lugar. Si una máquina solo sirve para un ejercicio, es un desperdicio de metros cuadrados.
+        </p>
+        <ul class="space-y-4 my-8">
+          <li><strong>Verticalidad:</strong> Usa las paredes y el techo para colgar equipo y liberar el suelo.</li>
+          <li><strong>Plegabilidad:</strong> Tu equipo debe poder desaparecer en menos de 5 minutos.</li>
+          <li><strong>Calidad sobre Cantidad:</strong> Un buen set de mancuernas ajustables sustituye a 15 pares tradicionales.</li>
+        </ul>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">El Equipamiento <span class="text-primary underline decoration-primary/20 underline-offset-8">Indispensable</span></h2>
+        <p>
+          Para el 90% de los objetivos estéticos y de rendimiento, solo necesitas tres pilares: una superficie de tracción (barra o anclaje), una carga variable (mancuernas) y un banco plegable. El resto es opcional.
+        </p>
+
+        <blockquote class="text-2xl font-medium leading-relaxed my-16">
+          "La falta de espacio es una excusa. La falta de voluntad es la realidad. Con dos mancuernas y dos metros cuadrados puedes superar al 90% de la población."
+        </blockquote>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">Cómo Organizar tu <span class="text-primary underline decoration-primary/20 underline-offset-8">Zona Sagrada</span></h2>
+        <p>
+          Delimita tu zona de entrenamiento con una alfombrilla de alta densidad. Este gesto físico crea un cambio mental: cuando pisas esa superficie, dejas de estar en tu salón y entras en tu zona de rendimiento. Al terminar, limpia y guarda. El orden es parte de la disciplina.
+        </p>
+      `,
+      date: "02 May 2026",
+      readTime: "10 min",
+      category: "Guía",
+      image: "/images/hero.png",
+      slug: "inicio-microgym"
+    },
+    {
+      title: "Cómo progresar en dominadas si no tienes barra",
+      content: "Las dominadas son el rey de los ejercicios de tirón. Si no puedes instalar una barra, te enseñamos alternativas biomecánicamente equivalentes usando equipo mínimo.",
+      body: `
+        <p class="lead text-2xl text-text mb-12 font-medium italic">
+          Las dominadas son el rey de los ejercicios de tirón, pero ¿qué pasa si vives en un piso de alquiler o tus marcos son de papel? No te preocupes: tu espalda puede seguir creciendo con ingenio.
+        </p>
+        
+        <p>
+          La biomecánica no entiende de marcas de equipo, solo entiende de <strong>vectores de fuerza</strong>. Si aplicas la tensión adecuada en el ángulo correcto, tus dorsales responderán igual que si estuvieras en un rack profesional.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">1. El Remo en Mesa <span class="text-primary underline decoration-primary/20 underline-offset-8">(Australian Pull-ups)</span></h2>
+        <p>
+          Busca una mesa robusta. Tumbado debajo, agárrate al borde y tira de tu pecho hacia la superficie. Es el equivalente horizontal a la dominada. Trabajas los mismos grupos musculares (dorsales, bíceps y core) con una ventaja: puedes ajustar la intensidad moviendo la posición de tus pies.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">2. Dominadas con <span class="text-primary underline decoration-primary/20 underline-offset-8">Toalla en la Puerta</span></h2>
+        <p>
+          Haz dos nudos fuertes en una toalla larga, pásala por encima de una puerta abierta (siempre por el lado que cierra) y ciérrala. Ahora tienes dos agarres seguros para hacer remos o trabajos de tracción isométrica.
         </p>
 
         <blockquote class="text-2xl font-medium leading-relaxed my-16">
           "La gravedad es constante; tu ingenio debe ser variable. No necesitas una barra de hierro para construir una espalda de acero."
         </blockquote>
 
-        <h2 class="text-4xl mt-20 mb-8 italic font-light">Veredicto <span class="text-primary underline decoration-primary/20 underline-offset-8">técnico</span></h2>
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">3. El Poder de las <span class="text-primary underline decoration-primary/20 underline-offset-8">Bandas de Resistencia</span></h2>
         <p>
-          Entrenar en casa requiere adaptabilidad. Si dominas estos ejercicios alternativos, cuando vuelvas a una barra real, tus marcas habrán volado.
+          Anclando una banda elástica de alta resistencia en lo alto de un armario o puerta, puedes simular el movimiento de jalón al pecho con un control de la contracción que a veces supera al de la propia barra. La clave está en el tiempo bajo tensión.
+        </p>
+
+        <h2 class="text-4xl mt-20 mb-8 italic font-light">Conclusión <span class="text-primary underline decoration-primary/20 underline-offset-8">Técnica</span></h2>
+        <p>
+          Entrenar en casa requiere adaptabilidad. Si dominas estos ejercicios alternativos, cuando vuelvas a una barra real, tus marcas habrán volado gracias a la mejora de tu conexión mente-músculo y estabilidad.
         </p>
       `,
       date: "18 Abr 2026",
       readTime: "8 min",
-      category: "Entrenamiento",
-      image: "/images/dumbbells.png",
+      category: "Guía",
+      image: "/images/blog/dominadas-sin-barra.png",
       slug: "dominadas-sin-barra"
     },
     {
       title: "El mito de las 2000 calorías: ¿Cuánto comer realmente?",
-      content: "La cifra de las 2000 calorías ha estado en las etiquetas de los alimentos durante décadas, pero es una simplificación peligrosa que puede estar saboteando tus resultados...",
+      content: "La cifra de las 2000 calorías es una simplificación peligrosa. Aprende a calcular tus necesidades reales según tu individualidad biológica y actividad en casa.",
       body: `
         <p class="lead text-2xl text-text mb-12 font-medium italic">
           La cifra de las 2000 calorías ha estado en las etiquetas de los alimentos durante décadas, pero es una simplificación peligrosa que ignora tu individualidad biológica y tu nivel de actividad real.
@@ -98,7 +170,7 @@ export async function getStaticPaths() {
       date: "10 Abr 2026",
       readTime: "10 min",
       category: "Nutrición",
-      image: "/images/hero.png",
+      image: "/images/blog/mito-calorias.png",
       slug: "mito-2000-calorias"
     }
   ];
